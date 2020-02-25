@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn" /> <br /> <br />
+  <div></div>
+
+  <script src="../jQuery/jquery-3.4.1.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-color/2.1.2/jquery.color.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      $("#btn").click(function () {
+        $("div").animate({
+          height: 100,
+          width: 100,
+          left: 800,
+          backgroundColor: "lime"
+        }, 1000)
+      })
+
+
+    })
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      height: 100px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="设置边框" id="btnOne" />
+  <input type="button" value="设置文本" id="btnTwo" />
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <script src="../jQuery/jquery-3.4.1.js"></script>
+  <script>
+
+    window.onload = function () {
+
+      var btnOne = document.getElementById("btnOne")
+      var btnTwo = document.getElementById("btnTwo")
+
+      var divs = document.getElementsByTagName("div");
+
+      btnOne.onclick = function () {
+        for (var i = 0; i < divs.length; i++) {
+
+          // 给没个div设置边框
+          divs[i].style.border = "1px solid #424242";
+
+        }
+      }
+
+      btnTwo.onclick = function () {
+        for (var i = 0; i < divs.length; i++) {
+
+          // 给没个div设置边框
+          divs[i].innerHTML = "我是设置的文本";
+
+        }
+      }
+
+    }
+
+    window.onload = function() {
+      console.log("我是另一个onload函数")
+    }
+
+    /* 
+      原生js的缺点：
+        1.不能添加多个入口函数(window.onload)，如果添加了多个入口函数，后面的会覆盖前面地
+        2.原生js的api名字太长太难记
+        3.原生js有的时候代码冗余
+        4.原生js中的有些属性和方法，游浏览器的兼容问题
+        5.原生js容错率比较低，前面的代码除了问题，后面的代码就执行不了
+     */
+    
+  </script>
+</body>
+
+</html>

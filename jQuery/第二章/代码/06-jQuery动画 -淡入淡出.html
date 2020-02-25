@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="淡入" id="fadeIn" />
+  <input type="button" value="淡出" id="fadeOut" />
+  <input type="button" value="切换" id="fadeToggle" />
+  <input type="button" value="淡入到那里" id="fadeTo" /><br /><br />
+  <div id="div1"></div>
+
+  <script src="../jQuery/jquery-3.4.1.js"></script>
+  <script>
+
+    $(function () {
+      //1.淡入 fadeIn
+      $("#fadeIn").click(function () {
+        //让id为div1的这个元素淡入.
+        // $("#div1").fadeIn(); //不给参数相当于给了一个默认的动画时长,mormal400毫秒
+        // $("#div1").fadeIn(1500)
+        $("#div1").fadeIn(1500, function () {
+          console.log("淡入动画完成")
+        })
+      })
+
+      //2.淡出 fadeOut
+      $("#fadeOut").click(function () {
+        //让id为div1的这个元素淡出
+        // $("#div1").fadeOut();//不给参数相当于给了一个默认的动画时长,mormal400毫秒
+        // $("#div1").fadeOut(1500);
+        $("#div1").fadeOut(1500, function () {
+          console.log("淡出动画完成")
+        });
+      })
+
+      //3.切换 fadeToggle
+      $("#fadeToggle").click(function () {
+        $("#div1").fadeToggle(1000);
+      })
+
+      //4.淡入到那里 fadeTo
+      $("#fadeTo").click(function() {
+        $("#div1").fadeTo(1000, 0.5)
+      })
+
+
+
+    })
+
+
+  </script>
+</body>
+
+</html>

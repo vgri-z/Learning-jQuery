@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="获取属性" id="btn1" />
+  <input type="button" value="设置属性" id="btn2" />
+  <input type="button" value="移除属性" id="btn3" /> <br /><br />
+  <img src="images/01.jpg" alt="周五晚睡1" title="周五晚睡" aaa='aaa' />
+
+  <script src="../jQuery/jquery-3.4.1.js"></script>
+  <script>
+
+
+    $(function () {
+      //jQuery中操作属性:attr() removeAttr();
+      //1.设置属性
+      $("#btn2").click(function () {
+        // 设置单属性
+        // $("img").attr("src", "images/02.jpg")
+        // $("img").attr("aaa", 'aaa')
+        // $("img").attr("bbb", "bbb")
+        // 设置多属性
+        $("img").attr({
+          'src': "images/02.jpg",
+          'aaa': "aaa",
+          'bbb': 'bbb'
+        })
+      })
+
+      //2.获取属性.
+      $("#btn1").click(function () {
+        //console.log($("img").attr("src"))//自带的属性可以获取
+        //console.log($("img").attr('aaa'))//自定义的属性也可以获取
+        console.log($('img').attr('bbb'));//如果没有这个属性,获取到的值就是undefined; attr()设置的属性也是可以获取的.
+      })
+
+      // 3.移除属性
+      $("#btn3").click(function() {
+        // 移除单属性
+        // $("img").removeAttr("bbb")
+        // $("img").removeAttr("alt")
+        // $("img").removeAttr("aaa")
+
+        // 移除多属性
+        $("img").removeAttr("aaa alt bbb")
+      })
+
+    })
+
+
+  </script>
+</body>
+
+</html>

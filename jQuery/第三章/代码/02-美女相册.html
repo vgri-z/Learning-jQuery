@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    body {
+      font-family: "Helvetica", "Arial", serif;
+      color: #333;
+      background-color: #ccc;
+      margin: 1em 10%;
+    }
+
+    h1 {
+      color: #333;
+      background-color: transparent;
+    }
+
+    a {
+      color: #c60;
+      background-color: transparent;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      float: left;
+      padding: 1em;
+      list-style: none;
+    }
+
+    #imagegallery {
+
+      list-style: none;
+    }
+
+    #imagegallery li {
+      margin: 0px 20px 20px 0px;
+      padding: 0px;
+      display: inline;
+    }
+
+    #imagegallery li a img {
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>
+    美女画廊
+  </h2>
+
+  <ul id="imagegallery">
+    <li><a href="images/meinv/1.jpg" title="美女A">
+        <img src="images/meinv/1-small.jpg" width="100" alt="美女1" />
+      </a></li>
+    <li><a href="images/meinv/2.jpg" title="美女B">
+        <img src="images/meinv/2-small.jpg" width="100" alt="美女2" />
+      </a></li>
+    <li><a href="images/meinv/3.jpg" title="美女C">
+        <img src="images/meinv/3-small.jpg" width="100" alt="美女3" />
+      </a></li>
+    <li><a href="images/meinv/4.jpg" title="美女D">
+        <img src="images/meinv/4-small.jpg" width="100" alt="美女4" />
+      </a></li>
+  </ul>
+  <div style="clear:both"></div>
+  <img id="image" src="images/meinv/placeholder.png" alt="" width="450px" />
+  <p id="des">选择一个图片</p>
+
+  <script src="../jQuery/jquery-3.4.1.js"></script>
+  <script>
+
+    $(function() {
+
+      
+      $("#imagegallery>li").click(function() {
+        var $src = $(this).find("a").attr("href");
+        var $txt = $(this).children("a").attr("title");
+        $("#image").attr("src", $src);
+        $("#des").text($txt)
+
+        return false;
+      })
+
+
+    })
+    
+    
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    li {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background: #0ff;
+      text-align: center;
+      line-height: 200px;
+      margin: 0 20px 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="ulList">
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+  </ul>
+  <script src="../jQuery/jquery-3.4.1.js"></script>
+  <script>
+    $(function () {
+
+      //1.获取所有的li标签.
+      var $lis = $("#ulList").children("li");
+      // console.log($lis)
+
+      //2.给$lis里面的每一个li标签设置透明度.
+      //$lis.css('opacity',0.5);//如果这样设置的话,由于隐式迭代那每一个li标签的透明度都设置成了0.5,不符合需求.
+
+      //给每一个对象设置不同的值的时候
+      //作用：遍历jQuery对象集合，为每个匹配的元素执行一个函数
+      $lis.each(function(index, element) {
+        console.log(index)
+        console.log(element)
+        $(element).css('opacity', (index+1)/10)
+      })
+
+    })
+  </script>
+</body>
+
+</html>

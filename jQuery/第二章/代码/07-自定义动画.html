@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      left: 0px;
+    }
+
+    #div1 {
+      top: 50px;
+    }
+
+    #div2 {
+      top: 170px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="从左到右800" id="lr800" />
+  <div id="div1"></div>
+  <!--<div id="div2"></div>-->
+
+  <script src="../jQuery/jquery-3.4.1.js"></script>
+  <script>
+
+    $(function () {
+
+      //自定义动画 animate();
+      //参数1:必选的 对象 代表的是需要做动画的属性
+      //参数2:可选的 代表执行动画的时长.
+      //参数3:可选的 easing 代表的是缓动还是匀速 linear(匀速)  swing(缓动)   默认不写是缓动
+      //参数4:可选的 动画执行完毕后的回调函数. 
+
+      $("#lr800").click(function () {
+        //让id为div1的元素动画移动到800那个位置.
+        // $("#div1").animate({
+        //   left: 800,
+        //   width: 200,
+        //   height: 200,
+        //   opacity: 0.5
+        // }, 2000, 'swing', function() {
+        //   console.log("动画执行完毕")
+        // })
+
+        $("#div1").animate({
+          left: 800,
+          height: 200,
+          width: 200,
+          opacity: 0.5
+        }, 2000, 'linear', function() {
+          $("#div1").animate({
+            left: 400,
+            top: 300,
+            width: 400,
+            height: 400,
+            opacity: 1
+          }, 2000, 'swing', function() {
+            $("#div1").animate({
+              left: 0,
+              top: 50,
+              height: 100,
+              width: 100
+            }, 2000, "linear", function() {
+              console.log("动画执行完毕")
+            })
+          })
+        })
+      })
+
+    })
+
+
+
+  </script>
+</body>
+
+</html>
